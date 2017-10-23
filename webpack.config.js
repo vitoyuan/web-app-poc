@@ -31,11 +31,11 @@ let serverConfig = {
 let webConfig = {
   target: 'web',
   entry: {
-    webapp: './webapp/index.js'
+    webapp: './webapp/app/index.jsx'
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'bundle')
+    path: path.resolve(__dirname, 'webapp/bundle')
   },
   module: {
     rules: [{

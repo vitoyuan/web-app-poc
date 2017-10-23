@@ -12,7 +12,7 @@ const server = express();
 var txns = [];
 
 server.use(bodyParser.json());
-server.use(express.static('./webapp/view'));
+server.use(express.static('./webapp'));
 
 server.get('/', function(req, res) {
   res.sendFile('index.html', {
