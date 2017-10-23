@@ -13,7 +13,7 @@ let serverConfig = {
   },
   module: {
     rules: [{
-      test: /\.js/,
+      test: /\.js$/,
       exclude: /(node_modules)/,
       use: {
         loader: 'babel-loader',
@@ -39,12 +39,12 @@ let webConfig = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.jsx?$/,
       exclude: /(node_modules|bower_components)/,
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['es2015']
+          presets: ['react', 'es2015']
         }
       }
     }]
