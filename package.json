@@ -6,6 +6,7 @@
   "scripts": {
     "hotbuild": "./node_modules/.bin/webpack --progress --debug --watch --config webpack.config.js --display-chunks",
     "server": "node bundle/server.bundle.js",
+    "webapp": "node bundle/webapp.bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

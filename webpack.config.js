@@ -1,9 +1,32 @@
 let path = require('path');
 
-module.exports = {
+let serverConfig = {
+  target: 'node',
   entry: {
-    server: './server/server.js',
-    app: './webapp/index.js'
+    server: './server/server.js'
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'bundle')
+  },
+  module: {
+    rules: [{
+      test: /\.js/,
+      exclude: /(node_modules)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['es2015']
+        }
+      }
+    }]
+  }
+};
+
+let clientConfig = {
+  target: 'web',
+  entry: {
+    webapp: './webapp/index.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -20,10 +43,7 @@ module.exports = {
         }
       }
     }]
-  },
-  target: 'async-node',
-  node: {
-    __filename: true,
-    __dirname: true
   }
 };
+
+module.exports = [serverConfig, clientConfig];
