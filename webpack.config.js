@@ -1,7 +1,9 @@
 let path = require('path');
 
+let nodeExternals = require('webpack-node-externals');
 let serverConfig = {
   target: 'node',
+  externals: [nodeExternals()], //server side webpack ignoring bundles in /node_modules/
   entry: {
     server: './server/server.js'
   },
@@ -19,11 +21,14 @@ let serverConfig = {
           presets: ['es2015']
         }
       }
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader'
     }]
   }
 };
 
-let clientConfig = {
+let webConfig = {
   target: 'web',
   entry: {
     webapp: './webapp/index.js'
@@ -46,4 +51,4 @@ let clientConfig = {
   }
 };
 
-module.exports = [serverConfig, clientConfig];
+module.exports = [serverConfig, webConfig];
