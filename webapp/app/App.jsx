@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Dashboard, Upcoming } from './basicframe';
+import { Dashboard, Dashboard2 } from './basicframe';
 
 class App extends React.Component {
 
@@ -11,16 +11,16 @@ class App extends React.Component {
 				<div id="wrapper">
 					<nav className="navbar navbar-default navbar-static-top" role="navigation" style={{marginBottom:"0px"}}>
 						<Link to={'/'}>
-							Dashboard
+							Dashboard 1
 						</Link>
 						<br />
-						<Link to={'/upcoming-feature'}>
-							Upcoming Feature
+						<Link to={'/dashboard2'}>
+							Dashboard 2
 						</Link>
 					</nav>
 					<div id="page-wrapper">
 						<Route path='/' component={Dashboard} exact />
-						<Route path='/upcoming-feature' component={Upcoming} />
+						<Route path='/dashboard2' component={Dashboard2} />
 					</div>
 				</div>
 			</Router>

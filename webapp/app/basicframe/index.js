@@ -1,7 +1,7 @@
 import Dashboard from './Dashboard.jsx';
-import Upcoming from './Upcoming.jsx';
+import Dashboard2 from './Dashboard2.jsx';
 
 export {
   Dashboard,
-  Upcoming
+  Dashboard2
 };
