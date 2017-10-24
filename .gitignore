@@ -1,0 +1,6 @@
+node_modules/
+webapp/assets/bower_components/
+bundle/
+build/
+logs/
+*.log

@@ -1,0 +1,20 @@
+body {
+  background-color: #fff;
+  padding-top: 50px;
+}
+
+.nav-sidebar {
+  margin-right: -15px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+
+.nav-sidebar > li > a {
+  color: #848484;
+}
