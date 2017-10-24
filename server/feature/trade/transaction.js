@@ -2,8 +2,8 @@ import TRADE_CODE from './tradecode.js';
 
 class Txn {
 
-  constructor(txnId, tradecode, side, price, size) {
-    this.txnId = txnId;
+  constructor(tradecode, side, price, size) {
+    this.txnId = -1;
     this.tradecode = tradecode;
     this.side = side;
     this.price = price;

@@ -6,8 +6,9 @@ class Dashboard extends React.Component {
 	render() {
 		
 		return(<div>
-			<Txn />
 			<TxnForm />
+			<hr />
+			<Txn />
 		</div>);
 	}
 }

@@ -32,8 +32,9 @@ server.get('/txns/:txnId', function(req, res) {
 
 server.post('/txns', function(req, res) {
   let body = req.body;
-  let txn = new Txn(body.txnId, body.tradecode, body.side, body.price, body.size);
+  let txn = new Txn(body.tradecode, body.side, body.price, body.size);
   txns.push(txn);
+  txn.txnId = txns.length;
   res.json({
     result: 'txn ' + txn.txnId + ' executed successfully'
   });
