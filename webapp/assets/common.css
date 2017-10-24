@@ -1,18 +1,20 @@
 body {
-    background-color: #f8f8f8;
+  background-color: #fff;
+  padding-top: 50px;
 }
 
-#wrapper {
-    width: 100%;
+.nav-sidebar {
+  margin-right: -15px;
+  margin-bottom: 20px;
+  margin-left: -20px;
 }
 
-#page-wrapper {
-    padding: 0 15px;
-    min-height: 1000px;
-    background-color: #fff;
+.sidebar {
+  height: 100vh;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
 }
 
-.navbar .navbar-header .navbar-brand img {
-    object-fit: contain;
-    max-height: 100%;
+.nav-sidebar > li > a {
+  color: #848484;
 }
