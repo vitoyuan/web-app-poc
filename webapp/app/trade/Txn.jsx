@@ -13,7 +13,7 @@ class Txn extends React.Component {
     for(let txn of this.props.txns) {
       txns.push(<tr key={txn[0]}>
         <td>{txn[1].get('txnId')}</td>
-        <td>{txn[1].get('tradecode')}</td>
+        <td>{txn[1].get('tradeCode')}</td>
         <td>{txn[1].get('side')}</td>
         <td>{txn[1].get('price')}</td>
         <td>{txn[1].get('size')}</td>

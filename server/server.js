@@ -4,8 +4,7 @@ import bodyParser from 'body-parser';
 import _ from 'lodash';
 
 import {
-  Txn,
-  TRADE_CODE
+  Txn
 } from './feature/trade';
 
 const server = express();
@@ -38,7 +37,7 @@ server.get('/txns/:txnId', function(req, res) {
 
 server.post('/txns', function(req, res) {
   let body = req.body;
-  let txn = new Txn(body.tradecode, body.side, body.price, body.size);
+  let txn = new Txn(body.tradeCode, body.side, body.price, body.size);
   txns.push(txn);
   txn.txnId = txnId;
   txnId++;

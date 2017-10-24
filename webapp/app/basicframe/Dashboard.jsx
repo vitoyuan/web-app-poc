@@ -11,6 +11,7 @@ class Dashboard extends React.Component {
 
 	render() {
 		return(<div>
+			<TxnForm />
 			<hr />
 			<Txn />
 		</div>);
