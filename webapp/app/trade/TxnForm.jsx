@@ -1,6 +1,9 @@
 import React from 'react';
+import { CommonReactComponent } from '../util';
+import { connect } from 'react-redux';
+import { createTxn, readTxns } from './action.js';
 
-class TxnForm extends React.Component {
+class TxnForm extends CommonReactComponent {
 
 	constructor(props) {
     super(props);
@@ -14,13 +17,13 @@ class TxnForm extends React.Component {
 
 		let tradeCode = 'BTC_JPY';
 		let tradeCodes = [];
-		tradeCodes.push(<option value="BTC_JPY">BTC_JPY</option>);
-		tradeCodes.push(<option value="BTC_BTG">BTC_BTG</option>);
+		tradeCodes.push(<option key={1} value="BTC_JPY">BTC_JPY</option>);
+		tradeCodes.push(<option key={2} value="BTC_BTG">BTC_BTG</option>);
 
 		let side = 'BUY';
 		let sides = [];
-		sides.push(<option value="BUY">BUY</option>);
-		sides.push(<option value="SELL">SELL</option>);
+		sides.push(<option key={1} value="BUY">BUY</option>);
+		sides.push(<option key={2} value="SELL">SELL</option>);
 
 		return(<div>
 			<div className="container-fluid">

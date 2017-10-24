@@ -9,7 +9,11 @@ import {
 } from './feature/trade';
 
 const server = express();
+var txnId = 1;
 var txns = [];
+txns.push(new Txn('BTC_JPY', 'BUY', 600000, 1));
+txns[0].txnId = txnId;
+txnId++;
 
 server.use(bodyParser.json());
 server.use(express.static('./webapp'));
@@ -21,7 +25,9 @@ server.get('/', function(req, res) {
 });
 
 server.get('/txns', function(req, res) {
-  res.json(txns);
+  res.json({
+    "txns": txns
+  });
 });
 
 server.get('/txns/:txnId', function(req, res) {
@@ -34,7 +40,8 @@ server.post('/txns', function(req, res) {
   let body = req.body;
   let txn = new Txn(body.tradecode, body.side, body.price, body.size);
   txns.push(txn);
-  txn.txnId = txns.length;
+  txn.txnId = txnId;
+  txnId++;
   res.json({
     result: 'txn ' + txn.txnId + ' executed successfully'
   });

@@ -25,23 +25,3 @@ export function postJSON(url, data) {
     data: JSON.stringify(data)
   });
 }
-
-export function deleteJSON(url) {
-  return ajax({
-    url: url,
-    method: 'POST',
-    contentType: 'application/json',
-    content: JSON.stringify({
-      dummyData: 'x'
-    })
-  })
-}
-
-export function putJSON(url, data) {
-  return ajax({
-    url: url,
-    method: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify(data)
-  });
-}

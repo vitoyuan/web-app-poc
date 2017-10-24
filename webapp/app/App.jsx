@@ -4,6 +4,10 @@ import { Dashboard, Dashboard2 } from './basicframe';
 
 class App extends React.Component {
 
+	constructor(props) {
+		super(props);
+	}
+
 	render() {
 		
 		return (
@@ -26,7 +30,7 @@ class App extends React.Component {
 			            <li><Link to={'/dashboard2'}>Dashboard 2</Link></li>
 								</ul>
 							</div>
-							<div className="col-md-10" main>
+							<div className="col-md-10">
 								<Route path='/' component={Dashboard} exact />
 								<Route path='/dashboard2' component={Dashboard2} />
 							</div>
